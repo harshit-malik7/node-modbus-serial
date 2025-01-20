@@ -408,12 +408,12 @@ function _onReceive(data) {
 
     /* check minimal length
      */
-    if (!transaction.lengthUnknown && data.length < 5) {
-        error = "Data length error, expected " +
-            transaction.nextLength + " got " + data.length;
-        next(new Error(error));
-        return;
-    }
+    // if (!transaction.lengthUnknown && data.length < 5) {
+    //     error = "Data length error, expected " +
+    //         transaction.nextLength + " got " + data.length;
+    //     next(new Error(error));
+    //     return;
+    // }
 
     /* check message CRC
      * if CRC is bad raise an error
@@ -466,12 +466,12 @@ function _onReceive(data) {
      * if we do not expect this data
      * raise an error
      */
-    if (!transaction.lengthUnknown && data.length !== transaction.nextLength) {
-        error = "Data length error, expected " +
-            transaction.nextLength + " got " + data.length;
-        next(new Error(error));
-        return;
-    }
+    // if (!transaction.lengthUnknown && data.length !== transaction.nextLength) {
+    //     error = "Data length error, expected " +
+    //         transaction.nextLength + " got " + data.length;
+    //     next(new Error(error));
+    //     return;
+    // }
 
     /* check message address
      * if we do not expect this message
